@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Turret Road", sans-serif;
+}
+
+.container {
+    position: relative;
+}
+
+.main-bg {
+background: #c7ffab;
+background: radial-gradient(circle,rgba(199, 255, 171, 1) 1%, rgba(101, 224, 148, 1) 49%, rgba(245, 188, 122, 1) 100%);
+width: 100vw;
+height: 100vh;
+}
+
+
+.hidden {
+    opacity: 0;
+    transition: opacity 2.5s ease-out;
+}
+
+.main-title {
+    /* margin: 0 auto; */
+    /* text-align: center; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: both;
+}
+
+/* Hide the checkbox visually */
+input[type="checkbox"] {
+    display: none;
+}
+
+/* Hide the content by default */
+.content {
+    display: none;
+}
+
+/* Show the content when the sibling input is checked */
+input[type="checkbox"]:checked ~ .content {
+    display: block;
+}
+
+input[type="checkbox"]:checked .main-title label {
+    background-color: red;
+}
+
+/* .visible {
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+} */
+
+@keyframes fadeIn{
+    from {
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+}
+
+.second-line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+}
+
+.walking-text {
+    color: blue;
+    text-decoration: none;
+}
+
+.walking-text:active {
+    color: red;
+}
+
+.walk-container {
+    position:absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateY(-50%);
+}
+
+.tread-container {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    transform: translateY(-60%);
+}
+
+.stroll-container {
+    position: absolute;
+    top: 30%;
+    left: 70%;
+    transform: translateY(-70%);
+}
+
+.walk-container span, .tread-container span, .stroll-container span {
+    position: relative;
+    display: inline-block;
+    color: white;
+    font-size: 3rem;
+    opacity: 0;
+    transform: translateY(-100vh) rotateX(-90deg);
+    animation-name: fall;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fall {
+    0% {
+        opacity: 0;
+        transform: translateY(-20vh) rotateX(0deg);
+    }
+
+     50% {
+        opacity: 1;
+        transform: translateY(0) rotateX(0);
+     }
+     100% {
+        opacity: 1;
+        transform: translateY(0) rotateX(0deg);
+     }
+}
+
+.walk-container span:nth-child(1) {animation-delay: 0.2s;}
+.walk-container span:nth-child(2) {animation-delay: 0.4s;}
+.walk-container span:nth-child(3) {animation-delay: 0.6s;}
+.walk-container span:nth-child(4) {animation-delay: 0.8s;}
+.walk-container span:nth-child(5) {animation-delay: 1.0s;}
+.walk-container span:nth-child(6) {animation-delay: 1.2s;}
+.walk-container span:nth-child(7) {animation-delay: 1.4s;}
+
+.tread-container span:nth-child(1) {animation-delay: 2.2s;}
+.tread-container span:nth-child(2) {animation-delay: 2.4s;}
+.tread-container span:nth-child(3) {animation-delay: 2.6s;}
+.tread-container span:nth-child(4) {animation-delay: 2.8s;}
+.tread-container span:nth-child(5) {animation-delay: 3.0s;}
+.tread-container span:nth-child(6) {animation-delay: 3.2s;}
+.tread-container span:nth-child(7) {animation-delay: 3.4s;}
+.tread-container span:nth-child(8) {animation-delay: 3.6s;}
+
+.stroll-container span:nth-child(1) {animation-delay: 4.2s;}
+.stroll-container span:nth-child(2) {animation-delay: 4.4s;}
+.stroll-container span:nth-child(3) {animation-delay: 4.6s;}
+.stroll-container span:nth-child(4) {animation-delay: 4.8s;}
+.stroll-container span:nth-child(5) {animation-delay: 5.0s;}
+.stroll-container span:nth-child(6) {animation-delay: 5.2s;}
+.stroll-container span:nth-child(7) {animation-delay: 5.4s;}
+.stroll-container span:nth-child(8) {animation-delay: 5.6s;}
+.stroll-container span:nth-child(9) {animation-delay: 5.8s;}
