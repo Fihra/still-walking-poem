@@ -39,6 +39,10 @@ height: 100vh;
     animation-fill-mode: both;
 }
 
+.main-title label:hover {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewport='0 0 32 32' style='font-size:24px;'><text y='24'>👣</text></svg>"), auto;
+}
+
 /* Hide the checkbox visually */
 input[type="checkbox"] {
     display: none;
@@ -92,7 +96,33 @@ input[type="checkbox"]:checked .main-title label {
     color: red;
 }
 
-.walk-container {
+.walk-tread-stroll-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.third-line {
+    margin-top: 300px;
+    animation-name: fadeIn;
+    opacity: 0;
+    animation-delay: 4s;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+
+.fourth-line {
+    margin-top:  0px;
+    margin-left: 200px;
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-delay: 4s;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+
+/* .walk-container {
     position:absolute;
     top: 20%;
     left: 50%;
@@ -111,7 +141,7 @@ input[type="checkbox"]:checked .main-title label {
     top: 30%;
     left: 70%;
     transform: translateY(-70%);
-}
+} */
 
 .walk-container span, .tread-container span, .stroll-container span {
     position: relative;
@@ -150,21 +180,105 @@ input[type="checkbox"]:checked .main-title label {
 .walk-container span:nth-child(6) {animation-delay: 1.2s;}
 .walk-container span:nth-child(7) {animation-delay: 1.4s;}
 
-.tread-container span:nth-child(1) {animation-delay: 2.2s;}
-.tread-container span:nth-child(2) {animation-delay: 2.4s;}
-.tread-container span:nth-child(3) {animation-delay: 2.6s;}
-.tread-container span:nth-child(4) {animation-delay: 2.8s;}
-.tread-container span:nth-child(5) {animation-delay: 3.0s;}
-.tread-container span:nth-child(6) {animation-delay: 3.2s;}
-.tread-container span:nth-child(7) {animation-delay: 3.4s;}
-.tread-container span:nth-child(8) {animation-delay: 3.6s;}
+.tread-container span:nth-child(1) {animation-delay: 1.2s;}
+.tread-container span:nth-child(2) {animation-delay: 1.4s;}
+.tread-container span:nth-child(3) {animation-delay: 1.6s;}
+.tread-container span:nth-child(4) {animation-delay: 1.8s;}
+.tread-container span:nth-child(5) {animation-delay: 2.0s;}
+.tread-container span:nth-child(6) {animation-delay: 2.2s;}
+.tread-container span:nth-child(7) {animation-delay: 2.4s;}
+.tread-container span:nth-child(8) {animation-delay: 2.6s;}
 
-.stroll-container span:nth-child(1) {animation-delay: 4.2s;}
-.stroll-container span:nth-child(2) {animation-delay: 4.4s;}
-.stroll-container span:nth-child(3) {animation-delay: 4.6s;}
-.stroll-container span:nth-child(4) {animation-delay: 4.8s;}
-.stroll-container span:nth-child(5) {animation-delay: 5.0s;}
-.stroll-container span:nth-child(6) {animation-delay: 5.2s;}
-.stroll-container span:nth-child(7) {animation-delay: 5.4s;}
-.stroll-container span:nth-child(8) {animation-delay: 5.6s;}
-.stroll-container span:nth-child(9) {animation-delay: 5.8s;}
+.stroll-container span:nth-child(1) {animation-delay: 2.8s;}
+.stroll-container span:nth-child(2) {animation-delay: 3.0s;}
+.stroll-container span:nth-child(3) {animation-delay: 3.2s;}
+.stroll-container span:nth-child(4) {animation-delay: 3.4s;}
+.stroll-container span:nth-child(5) {animation-delay: 3.6s;}
+.stroll-container span:nth-child(6) {animation-delay: 3.8s;}
+.stroll-container span:nth-child(7) {animation-delay: 4.0s;}
+.stroll-container span:nth-child(8) {animation-delay: 4.2s;}
+.stroll-container span:nth-child(9) {animation-delay: 4.2s;}
+
+
+.floating-text {
+    box-shadow: 0 5px 15px 0 rgba(0,0,0,0,0.6);
+    animation-name: floating;
+    animation-duration: 2s;
+    /* animation-delay: 5s; */
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+}
+
+@keyframes floating {
+    from {
+        transform: translate(0, 0px);
+        box-shadow: 0 5px 15px 0px rgba(0,0,0,0,0);
+    }
+    to {
+        transform: translate(0, -10px);
+        box-shadow: 0 25px 15px 0px rgba(0,0,0,0,2);
+    }
+}
+
+.walk-container { animation-delay: 5s;}
+.tread-container {animation-delay: 5.5s;}
+.stroll-container {animation-delay: 6s;}
+
+.walking-path, .treading-path, .strolling-path {
+
+    position: absolute;
+    display: none;
+}
+
+.tread-container:hover + .treading-path{
+    left: 80%;
+    top: 80%;
+    color: white;
+    display: block;
+    animation-name: tread-move;
+    animation-duration: 2s;
+}
+
+@keyframes tread-move {
+    0% {
+        scale: 200% 0;
+    }
+    100% {
+        scale: 100% 1;
+    }
+}
+
+.walk-container:hover + .walking-path {
+    left: 50%;
+    top: 80%;
+    color: white;
+    display: block;
+    animation-name: walk-move;
+    animation-duration: 1s;
+}
+
+@keyframes walk-move {
+    0% {
+        /* position: absolute; */
+        /* margin: 0 auto;
+        display: flex;
+        width: 0%;
+        justify-content: center;
+        white-space: nowrap;
+        overflow: hidden; */
+        transform: scaleX(0);
+    }
+    100% {
+        /* position: relative; */
+        /* width: 100%; */
+        transform: scaleX(1);
+    }
+}
+
+.stroll-container:hover + .strolling-path {
+    left: 20%;
+    top: 80%;
+    color: white;
+    display: block;
+}
