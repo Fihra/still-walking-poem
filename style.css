@@ -143,12 +143,12 @@ input[type="checkbox"]:checked .main-title label {
     transform: translateY(-70%);
 } */
 
-.fourth-line:hover {
+.fourth-line:hover, .third-line:hover {
     cursor: pointer;
     
 }
 
-.others-chose-their-path, .reaching-further {
+.others-chose-their-path, .reaching-further, .yet-stuck, .still-still {
     display: none;
 }
 
@@ -163,6 +163,13 @@ input[type="checkbox"]:checked .main-title label {
     display: block;
     animation-name:  reaching;
     animation-duration: 8s;
+    animation-fill-mode: forwards;
+}
+
+.third-line:active + .yet-stuck {
+    display: block;
+    animation-name: last-lines;
+    animation-duration: 2s;
     animation-fill-mode: forwards;
 }
 
@@ -183,6 +190,11 @@ input[type="checkbox"]:checked .main-title label {
      }
 }
 
+.others-chose-their-path span:nth-child(1) {animation-delay: 0.5s;}
+.others-chose-their-path span:nth-child(2) {animation-delay: 0.5s;}
+.others-chose-their-path span:nth-child(3) {animation-delay: 1.0s;}
+.others-chose-their-path span:nth-child(4) {animation-delay: 1.5s;}
+
 @keyframes reaching {
     0% {
         opacity: 0;
@@ -198,6 +210,22 @@ input[type="checkbox"]:checked .main-title label {
         transform: translateX(220px);
         opacity: 1;
     }
+}
+
+@keyframes last-lines {
+    0% {
+        /* opacity: 0; */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+    }
+
+    100% {
+        top: 50%;
+        left: 50%;
+    }
+
 }
 
 
