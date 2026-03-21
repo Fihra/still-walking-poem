@@ -143,6 +143,65 @@ input[type="checkbox"]:checked .main-title label {
     transform: translateY(-70%);
 } */
 
+.fourth-line:hover {
+    cursor: pointer;
+    
+}
+
+.others-chose-their-path, .reaching-further {
+    display: none;
+}
+
+.fourth-line:active + .others-chose-their-path{
+    display: block;
+    animation-name: show-path;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+.fourth-line:active + .others-chose-their-path + .reaching-further {
+    display: block;
+    animation-name:  reaching;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes show-path {
+    0% {
+        opacity: 0;
+        display: block;
+        transform: translateX(20px);
+    }
+
+     50% {
+        transform: translateX(40px);
+     }
+     
+     100% {
+        transform: translateX(60px);
+        opacity: 1;
+     }
+}
+
+@keyframes reaching {
+    0% {
+        opacity: 0;
+        display: block;
+        transform: translateX(120px);
+    }
+
+    50% {
+        transform: translateX(180px);
+    }
+
+    100% {
+        transform: translateX(220px);
+        opacity: 1;
+    }
+}
+
+
+
 .walk-container span, .tread-container span, .stroll-container span {
     position: relative;
     display: inline-block;
@@ -281,4 +340,18 @@ input[type="checkbox"]:checked .main-title label {
     top: 80%;
     color: white;
     display: block;
+    animation-name: stroll-move;
+    animation-duration: 10s;
+    opacity: 1;
+}
+
+@keyframes stroll-move {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(200px);
+        opacity: 0;
+    }
 }
