@@ -168,8 +168,19 @@ input[type="checkbox"]:checked .main-title label {
 
 .third-line:active + .yet-stuck {
     display: block;
+    margin-left: 20px;
+    margin-top: 20px;
     animation-name: last-lines;
     animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+.third-line:active + .yet-stuck + .still-still{
+    display: block;
+    /* margin-left: 40px;
+    margin-top: 20px; */
+    animation-name: last-lines;
+    animation-duration: 4s;
     animation-fill-mode: forwards;
 }
 
